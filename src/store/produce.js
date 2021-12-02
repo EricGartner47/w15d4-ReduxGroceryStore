@@ -1,6 +1,14 @@
 import produceData from "../mockData/produce.json"
+const LIKE = "produce/LIKE"
 
 export const getAllProduce = (state) => Object.values(state.produce)
+
+export const likeProduce = (id) => {
+    return {
+        type: LIKE,
+        id
+    }
+}
 
 const POPULATE = "produce/POPULATE"
 
@@ -20,6 +28,10 @@ export default function produceReducer(state = {}, action) {
           newState[produce.id] = produce;
         });
         return newState;
+       case LIKE:
+            return {...state, [action.id]: {
+                ...state[action.id], liked: !state[action.id]?.liked
+            }}
       default:
         return state;
     }

@@ -2,7 +2,7 @@ const ADD = "produce/ADD"
 const DECREASE = "produce/DECREASE"
 const REMOVE = "produce/REMOVE"
 const RESET = "produce/RESET"
-const LIKE = "produce/LIKE"
+// const LIKE = "produce/LIKE"
 
 export const addProduce = (id) => {//action creator
     return {
@@ -29,12 +29,12 @@ export const resetProduce = () => {
     }
 }
 
-export const likeProduce = (id) => {
-    return {
-        type: LIKE,
-        id
-    }
-}
+// export const likeProduce = (id) => {
+//     return {
+//         type: LIKE,
+//         id
+//     }
+// }
 
 export default function cartReducer(state = {}, action) {
     const newState = { ...state };
@@ -60,10 +60,10 @@ export default function cartReducer(state = {}, action) {
         case RESET:
             Object.keys(newState).forEach(key=> delete newState[key])
             return newState
-        case LIKE:
-            return {...state, [action.id]: {
-                ...state[action.id], liked: !state[action.id]?.liked
-            }}
+        // case LIKE:
+        //     return {...state, [action.id]: {
+        //         ...state[action.id], liked: !state[action.id]?.liked
+        //     }}
             // console.log(newState[action.id].liked, 'here')
             // if(newState[action.id].liked){
             //     newState[action.id].liked = false

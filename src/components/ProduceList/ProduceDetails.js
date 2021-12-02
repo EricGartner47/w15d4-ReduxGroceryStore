@@ -1,4 +1,5 @@
-import { addProduce, likeProduce } from "../../store/cart";
+import { addProduce} from "../../store/cart";
+import { likeProduce } from "../../store/produce";
 import { useDispatch } from "react-redux"
 import { useState } from "react"
 
