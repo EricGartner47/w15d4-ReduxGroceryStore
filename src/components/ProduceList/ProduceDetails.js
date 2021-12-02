@@ -1,9 +1,10 @@
 import { addProduce } from "../../store/cart";
-import {useDispatch} from "react-redux"
+import { useDispatch } from "react-redux"
 
 function ProduceDetails({ produce }) {
-  const cartItem = {};
+  const cartItem = {}
   const dispatch = useDispatch()
+
   // console.log(produce)
 
   return (
