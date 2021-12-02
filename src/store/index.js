@@ -1,9 +1,14 @@
 import { createStore, combineReducers, applyMiddleware, compose } from "redux";
 import produceReducer from "./produce";
+import cartReducer from "./cart";
+import { useSelector } from "react-redux";
 
 const rootReducer = combineReducers({
-  produce: produceReducer
+  produce: produceReducer,
+  cart: cartReducer
 });
+
+const items = useSelector(state => state.produce)
 
 let enhancer;
 
