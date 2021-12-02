@@ -13,7 +13,7 @@ export default function produceReducer(state = {}, action) {
     }
   }
 
-const populateProduce = () => {
+export const populateProduce = () => {
     return {
         type: POPULATE,
         produce: produceData
