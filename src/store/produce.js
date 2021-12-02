@@ -1,5 +1,6 @@
 import produceData from "../mockData/produce.json"
 
+export const getAllProduce = (state) => Object.values(state.produce)
 
 const POPULATE = "produce/POPULATE"
 
