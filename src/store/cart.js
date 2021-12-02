@@ -1,6 +1,7 @@
 const ADD = "produce/ADD"
 const DECREASE = "produce/DECREASE"
 const REMOVE = "produce/REMOVE"
+const RESET = "produce/RESET"
 
 export const addProduce = (id) => {//action creator
     return {
@@ -18,6 +19,12 @@ export const decreaseProduce = (id) => {//action creator
     return {
         type: DECREASE,
         id
+    }
+}
+
+export const resetProduce = () => {
+    return {
+        type: RESET
     }
 }
 
@@ -41,6 +48,9 @@ export default function cartReducer(state = {}, action) {
             if (newState[action.id].count === 0) {
                 delete newState[action.id]
             }
+            return newState
+        case RESET:
+            Object.keys(newState).forEach(key=> delete newState[key])
             return newState
         default:
             return state;
