@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { removeProduce } from "../../store/cart";
+import { removeProduce, addProduce, decreaseProduce } from "../../store/cart";
 import { useDispatch } from "react-redux"
 
 function CartItem({ item }) {
@@ -20,11 +20,13 @@ function CartItem({ item }) {
         />
         <button
           className="cart-item-button"
+          onClick={() => dispatch(addProduce(item.id))}
         >
           +
         </button>
         <button
           className="cart-item-button"
+        onClick={() => dispatch(decreaseProduce(item.id))}
         >
           -
         </button>
